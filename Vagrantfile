@@ -63,7 +63,7 @@ Vagrant.configure(2) do |config|
   # https://docs.vagrantup.com/v2/push/atlas.html for more information.
    config.push.define "atlas" do |push|
      push.app = "agcilantro/ofbiz"
-  # end
+   end
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
