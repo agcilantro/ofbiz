@@ -1,6 +1,6 @@
 # ofbiz
-A turnkey demo version of Apache OfBiz using Oracle VmBox and Vagrant
-<<<<<<< HEAD
+A turnkey demo version of Apache OfBiz using Oracle Virtualbox and Vagrant
+
 
 see apache ofbiz documentation for information on modules, urls, etc.
 

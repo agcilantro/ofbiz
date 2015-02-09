@@ -27,7 +27,8 @@ cd ofbiz
 ./ant
 ./ant load-demo
 ./ant load-extseed
-./ant start
+  
+#  to start instance of ofbiz: vagrant ssh, cd ofbiz, ./ant start
 
 
 
