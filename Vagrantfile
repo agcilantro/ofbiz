@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 8080, host: 8000
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 8443, host: 8443
 
   # Create a private network, which allows host-only access to the machine
@@ -61,8 +61,8 @@ Vagrant.configure(2) do |config|
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
   # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+   config.push.define "atlas" do |push|
+     push.app = "agcilantro/ofbiz"
   # end
 
   # Enable provisioning with a shell script. Additional provisioners such as
