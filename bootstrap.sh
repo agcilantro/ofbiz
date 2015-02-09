@@ -20,7 +20,7 @@ if ! [ -L /var/www ]; then
 
 # apt-get install -y oracle-java7-installer
 
-# clone, install and start ofbiz
+# clone, install, load data, build and start ofbiz
 
 git clone --recursive https://github.com/apache/ofbiz.git ofbiz
 cd ofbiz

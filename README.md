@@ -2,23 +2,14 @@
 A turnkey demo version of Apache OfBiz using Oracle VmBox and Vagrant
 <<<<<<< HEAD
 
-create a folder
-clone from this repository into your folder
-run vagrant up
-
 see apache ofbiz documentation for information on modules, urls, etc.
 
-to stop instance
-
-vagrant ssh
-
-cd ofbiz
 
 =======
-the provision file downloads Java JRE and JDK, sets path, clones ofbiz from git repository, loads seed data, builds and starts.
+the provision file downloads Java JRE and JDK, sets path, clones ofbiz from git repository, loads seed data, builds and starts ofbiz.
 
 Requires:
-Virtualbox Oracle
+Oracle Virtualbox
 Vagrant
 
 create a folder -mkdir vagrant-ofbiz
@@ -31,5 +22,5 @@ run vagrant-up
 To stop the ofbiz instance:
 vagrant ssh
 cd ofbiz
->>>>>>> github/master
+
 ./ant stop
