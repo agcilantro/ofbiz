@@ -12,7 +12,7 @@ apt-get install -y oracle-java7-installer
 
 apt-get install -y apache2
 apt-get install -y git
-apt-get install -y php5
+# apt-get install -y php5
 if ! [ -L /var/www ]; then
 	rm -rf /var/www
 	ln -fs /vagrant /var/www
@@ -27,8 +27,9 @@ cd ofbiz
 ./ant
 ./ant load-demo
 ./ant load-extseed
+./ant start
   
-#  to start instance of ofbiz: vagrant ssh, cd ofbiz, ./ant start
+
 
 
 
