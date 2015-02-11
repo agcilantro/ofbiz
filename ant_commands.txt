@@ -1,0 +1,65 @@
+Buildfile: /home/vagrant/ofbiz/build.xml
+
+Main targets:
+
+ build-dev                     Patch sources in a dev environment if patch files are present in runtime/patches.
+ build-production              Patch and build all sources for use in a live environment. On Windows you need to have patch.exe in the path and patch files must all be in dos format (CR+LF)
+ build-qa                      Patch and build all sources for use in a qa environment. On Windows you need to have patch.exe in the path and patch files must all be in dos format (CR+LF)
+ build-test                    Patch and build all sources for use in a test environment. On Windows you need to have patch.exe in the path and patch files must all be in dos format (CR+LF)
+ build-website                 For committers : Update dtds from OFBiz instance to site
+ clean-all                     Clean all DB, Catalina and caches data, logs, and runtime subdirectories and all specific files like .rej, .orig
+ clean-cache                   Clean the UtilCache file if errors found with old objects in the cache (Java runtime error something like 'local class incompatible')
+ clean-catalina                Clean Catalina data in runtime/catalina/work
+ clean-data                    Clean all DB data (Derby) under runtime/data
+ clean-downloads               Clean all downloaded files
+ clean-ivy                     Clean Ivy local cache
+ clean-logs                    Clean all logs in runtime/logs
+ clean-output                  Clean runtime/output directory
+ clean-search-indexes          Remove search indexes (e.g. Lucene indexes) created under runtime/indexes
+ clean-tempfiles               Remove files located in runtime/tempfiles (captcha, etc...)
+ clean-uploads                 Remove uploaded files
+ clean-xtra                    Clean all other files like .rej, .orig, etc.
+ cobertura-report              Generate a HTML code coverage report with cobertura, can be found in runtime/logs/cobertura-report
+ cobertura-report-xml          Generate a XML file from the cobertura report, this will be used by sonar
+ copy-dtds                     For committers : Copy all dtds from OFBiz instance to website
+ create-admin-user-login       Prompt for a user name, then create a user login with admin privileges and a temporary password equal to 'ofbiz'. After a successful login the user will be prompted for a new password. Note: this uses load-admin-user-login target
+ create-component              Create the layout of an OFBiz component in the hot-deploy folder.
+ create-tenant                 Create a new tenant in your environment, create the delegator, load initial data with admin-user and password (needs multitenant=Y in general.properties)
+ docs-all                      For committers : Build all javadoc into one tree for easier viewing by the community
+ download-PG-JDBC              Download postgres jdbc driver
+ download-activemq             Download activemq for DCC (Distributed Cache Clearing
+ download-cobertura            Download cobertura related files
+ download-mySQL-JDBC           Download mySQL jdbc driver
+ download-sonar-ant-task       Download sonar related files
+ gen-kek                       Generate a new key-encrypting-key for use in entityengine.xml
+ gitinfo                       Update the Git Branch-revision info in the footer.
+ load-admin-user-login         Create a user login with admin privileges and a temporary password equal to 'ofbiz'; after a successful login the user will be prompted for a new password. Example command for the userLogin 'admin': ./ant load-admin-user-login -DuserLoginId=admin
+ load-all-tenants              Load data for all tenants, syntax eg: ant load-all-tenants (needs multitenant=Y in general.properties)
+ load-demo                     Load all data; meant for generic OFBiz development, testing, demonstration, etc purposes
+ load-demo-multitenant         Load all data needed for the multi-tenancy demonstration. Caution: this creates three databases, with each one loaded with all demo data.
+ load-extseed                  Load seed, seed-initial and ext data; meant for manual/generic testing, development, or going into production with a derived system based on stock OFBiz where the ext data basically replaces the demo data
+ load-exttest                  Load seed, seed-initial, ext and ext-test data; meant for automated testing with a derived system based on stock OFBiz
+ load-file                     Load data using the command line argument 'data-file' to load data from a given file using the 'default' delegator or a delegator specified in the command line argument 'delegator'
+ load-readers                  Load data using the command line argument data-readers that takes a comma separated list of readers (seed, seed-initial, demo, ext, ext-test, ext-demo). On Windows XP (at least) you need top wrap the parameters in double-quotes. For instance: ant load-readers "-Ddata-readers=seed,seed-initial,ext"
+ load-seed                     Load ONLY the seed data (not seed-initial, demo, ext* or anything else); meant for use after an update of the code to reload the seed data as it is generally maintained along with the code and needs to be in sync for operation
+ load-tenant                   Load data using tenantId, syntax eg: ant load-tenant -DtenantId=DEMO1 (needs multitenant=Y in general.properties)
+ load-tenant-admin-user-login  Create the admin login for the tenant with admin privileges, and a temporay password equal to 'ofbiz'. Password must be changed on first login
+ load-tenant-data-readers      Load data of given data-readers in the tenant database. Example: ./ant load-tenant-data-readers -Ddata-readers=seed,seed-initial -DtenantId=demo
+ refresh                       Clean all and rebuild
+ revert-dev                    Revert patch files present in runtime/patches applied by build-dev.
+ run-test                      Run a single test, syntax eg: ant run-test -Dtest.component=service -Dtest.case=service-soap-tests
+ run-test-debug                Run a single test in debug mode, syntax eg: ant run-test-debug -Dtest.component=service -Dtest.case=service-soap-tests
+ run-test-list                 Run all configured tests, stopping/starting ofbiz between each test
+ run-test-suite                Run a single test suite, syntax eg: ant run-test-suite -Dtest.component=mycomponent -Dtest.suiteName=mytests
+ run-tests                     Run OFBiz default tests; you have to manually execute 'ant load-demo' before (and if needed even clear your data before) and see results in runtime/logs/test-results/html/all-tests.html. Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ run-tests-with-cobertura      Download Cobertura and perform code coverage (same as run-tests). You will need a valid Internet connection to download cobertura
+ sonar                         Sonar code analysis. You need a Sonar instance running to use it. More info on http://www.sonarsource.org/
+ start                         Start OFBiz (use -Dportoffset=portNumber to shift all ports with the portNumber value)
+ start-batch                   Start OFBiz as a separate process. Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ start-both                    Start OFBiz in both Web and POS (Point of sale) modes. Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ start-debug                   Start OFBiz in debugging mode. It uses the 8091 port by default. Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ start-pos                     Start OFBiz POS (Point of sale). Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ status                        Display status of OFBiz. Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ stop                          Stop OFBiz. Use -Dportoffset=portNumber to shift all ports with the portNumber value.
+ svninfo                       Update the Release-revision info in the footer. Note that you need a valid Internet connection and Subversion connected to the OFBiz repository for that 
+Default target: build

@@ -23,7 +23,14 @@ if ! [ -L /var/www ]; then
 # clone, install, load data, build and start ofbiz
 
 git clone --recursive https://github.com/apache/ofbiz.git ofbiz
+
+# change ownership of ofbiz foler to vagrant:vagrant
+sudo chown -R vagrant:vagrant ofbiz
+
 cd ofbiz
+
+
+
 ./ant
 ./ant load-demo
 ./ant load-extseed
