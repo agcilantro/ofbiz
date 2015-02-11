@@ -24,8 +24,11 @@ if ! [ -L /var/www ]; then
 
 git clone --recursive https://github.com/apache/ofbiz.git ofbiz
 
-# change ownership of ofbiz foler to vagrant:vagrant
-sudo chown -R vagrant:vagrant ofbiz
+# change ownership of ofbiz folder to vagrant:OFBIZ, chmod to 700
+sudo addgroup OFBIZ
+sudo adduser vagrant OFBIZ
+sudo chown -R :OFBIZ ofbiz
+sudo chmod -R 700 ofbiz
 
 cd ofbiz
 
