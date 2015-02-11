@@ -28,7 +28,7 @@ git clone --recursive https://github.com/apache/ofbiz.git ofbiz
 sudo addgroup OFBIZ
 sudo adduser vagrant OFBIZ
 sudo chown -R :OFBIZ ofbiz
-sudo chmod -R 700 ofbiz
+sudo chmod 700 ofbiz
 
 cd ofbiz
 
