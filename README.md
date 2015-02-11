@@ -6,17 +6,21 @@ see apache ofbiz documentation for information on modules, urls, etc.
 
 
 =======
-the provision file downloads Java JRE and JDK, sets path, clones ofbiz from git repository, loads seed data, builds and starts ofbiz.
+the provision file adds a repository for Java JRE, downloads Java JRE and JDK, sets Java path, clones ofbiz from git repository, loads demo data, loads seed data, creates an ofbiz group, adds vagrant user to ofbiz group, changes ownership of the ofbiz folder to the ofbiz group, builds and starts ofbiz.
+
 
 Requires:
 Oracle Virtualbox
 Vagrant
 
-create a folder -mkdir vagrant-ofbiz
-change to the folder - cd vagrant-ofbiz
 
-clone from git into this folder
-run vagrant-up
+To install:
+
+mkdir vagrant-ofbiz
+cd vagrant-ofbiz
+clone --recursive https://github.com/agcilantro/ofbiz.git
+
+vagrant-up
 
 
 To stop the ofbiz instance:
@@ -24,3 +28,6 @@ vagrant ssh
 cd ofbiz
 
 ./ant stop
+
+to do: add a postgresql database installation
+	make ofbiz a service that starts automatically upon server startup
