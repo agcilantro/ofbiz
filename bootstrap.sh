@@ -27,7 +27,7 @@ git clone --recursive https://github.com/apache/ofbiz.git ofbiz
 # change ownership of ofbiz folder to vagrant:ofbiz, chmod ofbiz folder to 700
 sudo addgroup ofbiz
 sudo adduser vagrant ofbiz
-sudo chown -R :ofbiz ofbiz
+sudo chown -R vagrant:ofbiz ofbiz
 sudo chmod 700 ofbiz
 
 cd ofbiz
